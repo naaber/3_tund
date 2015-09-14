@@ -14,4 +14,10 @@
 	<?php } else { ?>
 		<li>Logi sisse</li>
 	<?php } ?>
+	<?php 
+	if($page_file != "create_user.php"){ ?>
+		<li><a href="create_user.php">Loo kasutaja</a></li>
+	<?php } else { ?>
+		<li>Loo kasutaja</li>
+	<?php } ?>
 </ul>
