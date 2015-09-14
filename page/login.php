@@ -6,10 +6,6 @@
 	
 	$email_error = " ";
 	$password_error = " ";
-
-	$first_name_error = " ";
-	$last_name_error = " ";
-	$b_day_error = " ";
 	
 	//Kontrolli ainult siis, kui kasutaja vajutab "Logi sisse" nuppu
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -26,15 +22,6 @@
 			}
 			
 		}
-		if(empty($_POST["first_name"])) {
-		$first_name_error = "Ei saa olla tühi";
-		}
-		if(empty($_POST["last_name"])) {
-		$last_name_error = "Ei saa olla tühi";
-		}
-		if(empty($_POST["b_day"])) {
-		$b_day_error = "Ei saa olla tühi";
-		}
 	}
 ?>
 <?php require_once("../header.php"); ?>
@@ -44,15 +31,5 @@
 			<input name="password" type="password" placeholder="Parool">* <?php echo $password_error; ?> <br><br>
 		
 			<input type="submit" value="Logi sisse">
-		</form>
-		<h2>Create user</h2>
-		<form action="user_form.php" method="post">
-			<input name="first_name" type="text" placeholder="Eesnimi">* <?php echo $first_name_error; ?> <br><br>
-			<input name="last_name" type="text" placeholder="Perekonnanimi">* <?php echo $last_name_error; ?> <br><br>
-			<input name="b_day" type="date">* <?php echo $b_day_error; ?> <br><br>
-			<input name="email" type="email" placeholder="E-post">* <?php echo $email_error; ?> <br><br>
-			<input name="password" type="password" placeholder="Parool">* <?php echo $password_error; ?> <br><br>
-			
-			<input type="submit" value="Loo kasutaja">
 		</form>
 <?php require_once("../footer.php"); ?>
