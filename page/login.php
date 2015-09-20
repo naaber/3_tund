@@ -4,12 +4,12 @@
 	//echo $_POST["email"];
 	//echo $_POST["password"];
 	
-	$email_error = " ";
-	$password_error = " ";
+	$email_error = "";
+	$password_error = "";
 	
 	//muutujad väärtustega
-	$email = " ";
-	$password = " ";
+	$email = "";
+	$password = "";
 	
     // kontrolli ainult siis kui kasutaja vajutab logi sisse nuppu
     if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -47,6 +47,8 @@
 		$data = htmlspecialchars($data);
 		return $data;
 	}
+?>
+<?php
 
 	//lehe nimi
 	$page_title = "Login";
@@ -57,7 +59,7 @@
 ?>
 <?php require_once("../header.php"); ?>
 		<h2>Login</h2>
-		<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 			<input name="email" type="email" placeholder="E-post" value ="<?php echo $email; ?>">* <?php echo $email_error; ?> <br><br>
 			<input name="password" type="password" placeholder="Parool">* <?php echo $password_error; ?> <br><br>
 		
